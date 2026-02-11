@@ -1,8 +1,21 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import SearchBox from '@/components/SearchBox';
 import CollectionCard from '@/components/CollectionCard';
 import ToolCard from '@/components/ToolCard';
 import { getFeaturedCollections, getFeaturedTools } from '@/lib/content';
+import { SITE_URL, DEFAULT_OG_IMAGE, SITE_NAME } from '@/lib/seo';
+
+export const metadata: Metadata = {
+  title: 'Curated Climate AI Tools & GPTs',
+  description: 'Discover and explore the best climate AI tools and GPTs—curated for climate tech, sustainability, emissions, and impact. Find the right tool in minutes.',
+  openGraph: {
+    title: `${SITE_NAME} | Curated Climate AI Tools & GPTs`,
+    description: 'Discover and explore the best climate AI tools and GPTs—curated for climate tech, sustainability, emissions, and impact.',
+    url: SITE_URL,
+    images: [DEFAULT_OG_IMAGE],
+  },
+};
 
 export default function HomePage() {
   const featuredCollections = getFeaturedCollections();
@@ -40,7 +53,7 @@ export default function HomePage() {
           </svg>
         </Link>
         <p className="text-lightgray/50 text-sm mt-3 max-w-md mx-auto">
-          Chat with our AI to get personalized tool recommendations and workflows.
+          Find the right climate GPTs and tools in minutes — get recommendations, comparisons, and workflows from the hub directory.
         </p>
       </div>
 

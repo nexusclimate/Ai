@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import SubmitForm from '@/components/SubmitForm';
 
 export const metadata: Metadata = {
-  title: 'Submit a GPT | Climate GPT Hub',
-  description: 'Submit your climate-focused GPT or AI tool to Climate GPT Hub',
+  title: 'Submit a GPT',
+  description: 'Submit your climate-focused GPT or AI tool to Climate GPT Hub. We review and add tools that meet our criteria for the curated directory.',
 };
 
 export default function SubmitPage() {

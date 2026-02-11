@@ -5,8 +5,8 @@ import SearchClient from './search-client';
 import { getAllTools } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Search Climate AI Tools | Climate GPT Hub',
-  description: 'Search and discover climate-focused AI tools and GPTs across all categories.',
+  title: 'Search',
+  description: 'Search and discover climate-focused AI tools and GPTs by name, tag, or collection. Find the right climate GPT or tool for your use case.',
 };
 
 export default function SearchPage() {

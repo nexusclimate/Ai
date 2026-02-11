@@ -1,27 +1,51 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { SITE_URL, DEFAULT_OG_IMAGE, SITE_NAME, DEFAULT_DESCRIPTION, DEFAULT_KEYWORDS } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Climate GPT Hub 🌍',
-  description: 'Discover the best climate-related and climate tech startup GPTs across all major platforms. A curated one-stop-shop for climate AI tools.',
-  keywords: 'climate GPT, climate tech AI, climate AI tools, GPT curation, climate technology, sustainability AI, climate startups',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | Curated Climate AI Tools & GPTs`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: DEFAULT_DESCRIPTION,
+  keywords: DEFAULT_KEYWORDS,
+  authors: [{ name: 'Nexus Climate', url: 'https://nexusclimate.vc' }],
+  creator: 'Nexus Climate',
+  publisher: 'Nexus Climate',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: { canonical: SITE_URL },
   icons: {
     icon: '/icon.svg',
     shortcut: '/icon.svg',
     apple: '/icon.svg',
   },
   openGraph: {
-    title: 'Climate GPT Hub | Curated AI Tools for Climate Tech',
-    description: 'Discover the best climate-related and climate tech startup GPTs across all major platforms.',
-    images: ['/og.png'],
-    siteName: 'Climate GPT Hub',
+    type: 'website',
+    locale: 'en_US',
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | Curated Climate AI Tools & GPTs`,
+    description: DEFAULT_DESCRIPTION,
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Climate GPT Hub | Curated AI Tools for Climate Tech',
-    description: 'Discover the best climate-related and climate tech startup GPTs across all major platforms.',
-    images: ['/og.png'],
+    title: `${SITE_NAME} | Curated Climate AI Tools & GPTs`,
+    description: DEFAULT_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
   },
+  verification: {
+    // Optional: add when you have them
+    // google: 'your-google-verification-code',
+    // yandex: 'your-yandex-verification-code',
+  },
+  category: 'technology',
 };
 
 export default function RootLayout({
@@ -32,6 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <JsonLd />
         {/* Background gradient mesh */}
         <div className="fixed inset-0 mesh-gradient"></div>
         

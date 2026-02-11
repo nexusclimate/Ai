@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import Badge from '@/components/Badge';
 import { getAllTools, getToolBySlug, getToolContent } from '@/lib/content';
+import { SITE_URL } from '@/lib/seo';
 
 export async function generateStaticParams() {
   const tools = getAllTools();
@@ -13,16 +14,21 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const tool = getToolBySlug(params.slug);
-  
+
   if (!tool) {
-    return {
-      title: 'Tool Not Found',
-    };
+    return { title: 'Tool Not Found' };
   }
 
+  const url = `${SITE_URL}/tools/${params.slug}`;
   return {
-    title: `${tool.name} | Climate GPT Hub`,
+    title: tool.name,
     description: tool.short_summary,
+    alternates: { canonical: url },
+    openGraph: {
+      title: tool.name,
+      description: tool.short_summary,
+      url,
+    },
   };
 }
 
