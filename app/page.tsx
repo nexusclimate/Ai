@@ -29,6 +29,19 @@ export default function HomePage() {
         <div className="flex justify-center">
           <SearchBox placeholder="Search climate AI tools..." />
         </div>
+        <p className="text-lightgray/60 text-sm mt-6 mb-4">or</p>
+        <Link
+          href="/tools/climate-gpt-concierge"
+          className="inline-flex items-center gap-2 px-6 py-3 glass border-accent/40 text-accent rounded-lg hover:border-accent hover:bg-accent/10 font-medium transition"
+        >
+          <span>Try the Climate GPT Hub Concierge</span>
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </Link>
+        <p className="text-lightgray/50 text-sm mt-3 max-w-md mx-auto">
+          Chat with our AI to get personalized tool recommendations and workflows.
+        </p>
       </div>
 
       {/* Featured Collections */}

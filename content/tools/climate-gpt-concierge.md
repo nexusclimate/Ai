@@ -2,7 +2,7 @@
 name: Climate GPT Hub Concierge
 slug: climate-gpt-concierge
 platform: OpenAI
-url: https://example.com/concierge
+url: https://chat.openai.com/g/climate-gpt-hub-concierge
 collections:
   - startup-resources
   - climate-analysis

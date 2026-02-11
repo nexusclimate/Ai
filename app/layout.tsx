@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: 'Climate GPT Hub 🌍',
   description: 'Discover the best climate-related and climate tech startup GPTs across all major platforms. A curated one-stop-shop for climate AI tools.',
   keywords: 'climate GPT, climate tech AI, climate AI tools, GPT curation, climate technology, sustainability AI, climate startups',
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
   openGraph: {
     title: 'Climate GPT Hub | Curated AI Tools for Climate Tech',
     description: 'Discover the best climate-related and climate tech startup GPTs across all major platforms.',
