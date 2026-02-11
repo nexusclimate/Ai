@@ -2,7 +2,7 @@
 name: Energy Optimisation Coach
 slug: energy-optimisation-coach
 platform: OpenAI
-url: https://example.com/energy-gpt
+url: https://www.iea.org/topics/energy-efficiency
 collections:
   - energy
 tags:

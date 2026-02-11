@@ -2,7 +2,7 @@
 name: Climate Policy Briefing Assistant
 slug: climate-policy-briefing-assistant
 platform: Web App
-url: https://example.com/policy
+url: https://www.ipcc.ch/
 collections:
   - climate-analysis
 tags:

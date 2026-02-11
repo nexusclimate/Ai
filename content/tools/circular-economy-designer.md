@@ -2,7 +2,7 @@
 name: Circular Economy Business Model Designer
 slug: circular-economy-designer
 platform: OpenAI
-url: https://example.com/circular-economy
+url: https://ellenmacarthurfoundation.org/
 collections:
   - circular-economy
   - startup-resources

@@ -2,7 +2,7 @@
 name: MRV Playbook Assistant
 slug: mrv-playbook-assistant
 platform: OpenAI
-url: https://example.com/mrv-gpt
+url: https://ghgprotocol.org/
 collections:
   - climate-analysis
 tags:

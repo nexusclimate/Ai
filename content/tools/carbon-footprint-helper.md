@@ -2,7 +2,7 @@
 name: Carbon Footprint Helper
 slug: carbon-footprint-helper
 platform: Web App
-url: https://example.com/carbon-footprint
+url: https://ghgprotocol.org/
 collections:
   - climate-analysis
 tags:

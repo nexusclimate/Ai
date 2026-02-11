@@ -2,7 +2,7 @@
 name: ESG Data Assistant
 slug: esg-data-assistant
 platform: OpenAI
-url: https://example.com/esg-assistant
+url: https://www.fsb-tcfd.org/
 collections:
   - climate-finance
   - climate-analysis

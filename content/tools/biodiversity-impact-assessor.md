@@ -2,7 +2,7 @@
 name: Biodiversity Impact Assessor
 slug: biodiversity-impact-assessor
 platform: OpenAI
-url: https://example.com/biodiversity
+url: https://tnfd.global/
 collections:
   - nature-based-solutions
   - climate-analysis

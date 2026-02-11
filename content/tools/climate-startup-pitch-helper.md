@@ -2,7 +2,7 @@
 name: Climate Startup Pitch Helper
 slug: climate-startup-pitch-helper
 platform: OpenAI
-url: https://example.com/pitch-gpt
+url: https://www.nexusclimate.vc/
 collections:
   - startup-resources
 tags:
