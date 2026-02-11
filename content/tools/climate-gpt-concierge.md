@@ -29,6 +29,3 @@ A routing assistant that helps users discover and choose the right climate AI to
 
 ## Who it's for
 Practitioners, startups, investors, advisors, and researchers who want practical tool recommendations.
-
-## If you see "This GPT is inaccessible or not found"
-The Concierge is a custom GPT that must be created and published once by the site owner. If the link above shows that error, the GPT is not yet set up or the share link has changed. **Site admins:** open **CREATE_CONCIERGE_GPT.md** in this repo and follow the steps: create the GPT in ChatGPT, set visibility to **Only people with a link** or **Public**, then paste the exact link OpenAI gives you (e.g. `https://chat.openai.com/g/g-xxxxx`) into the `url` field in this file and redeploy.
