@@ -77,7 +77,7 @@ export default function RootLayout({
               <span><span className="inline-block w-2 h-2 rounded-full bg-yellow-400/80 mr-1.5 align-middle" aria-hidden />beta — in development</span>
               <span><span className="inline-block w-2 h-2 rounded-full bg-softblue/80 mr-1.5 align-middle" aria-hidden />experimental — early / try at your own risk</span>
             </div>
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-lightgray/70">
+            <div className="border-t border-white/20 pt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-lightgray/70">
               {/* Left: Copyright */}
               <div>© 2026 Climate GPT Hub</div>
               {/* Middle: Initiative */}
