@@ -14,11 +14,13 @@ export default function SubmitForm() {
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value="gpt-submission" />
-      {/* Reply-to is set from the field with name="email". Subject uses Netlify variables. */}
+      {/* Reply-to is set from the field with name="email" so you can reply directly to the submitter. */}
+      {/* Subject: Netlify replaces %{gpt-name} and %{submitter-name} when supported; otherwise use UI. */}
       <input
         type="hidden"
         name="subject"
-        value="New GPT submission · %{formName} · %{siteName} (#%{submissionId})"
+        data-remove-prefix
+        value="GPT submission: %{gpt-name} — from %{submitter-name} (#%{submissionId})"
       />
       <p className="hidden">
         <label>

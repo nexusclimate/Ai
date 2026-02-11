@@ -1,8 +1,8 @@
 ---
-name: Climate Startup Pitch Helper
+name: Manus AI Pitch Deck Generator
 slug: climate-startup-pitch-helper
-platform: OpenAI
-url: https://example.com
+platform: Web App
+url: https://manus.im/playbook/pitch-deck-generator
 collections:
   - startup-resources
 tags:
@@ -12,22 +12,22 @@ tags:
 maturity: beta
 verified: false
 featured: true
-short_summary: "A GPT or prompt set to sharpen your narrative, impact claims, ICP, and investor messaging—use it directly in ChatGPT or other AI platforms."
-last_verified: "2026-02-05"
+short_summary: "Creates investor-ready pitch decks in minutes—researches your market, crafts narratives, and designs professional slides."
+last_verified: "2026-02-11"
 use_cases:
-  - "Refine value proposition and ICP"
-  - "Stress-test impact claims and evidence"
-  - "Create a crisp investor story"
+  - "Generate data-driven pitch decks with market research and financial projections"
+  - "Refine value proposition and investor narrative"
+  - "Create professional slides with context from your materials (business plan, financials, market analysis)"
 limitations:
-  - "Requires founder input and real traction data"
+  - "Requires founder input and context for best results"
   - "Does not replace investor diligence"
 ---
 
 ## What it does
-This tool gives you structured prompts and a GPT-style assistant for fundraising and storytelling. Use it inside ChatGPT (or paste the prompts into Claude, Gemini, etc.) to work through your pitch, impact narrative, and investor messaging—no consultancy required.
+Manus AI Pitch Deck Generator builds investor-ready pitch decks in minutes. You describe your startup, product, and target audience and can share existing materials (business plans, financial data, market analysis). The tool researches your market, crafts the narrative, and designs professional slides—useful for climate and impact founders who need to communicate traction and impact clearly.
 
 ## Who it's for
-Climate founders preparing for seed or Series A who want a ready-to-use AI tool or prompt set for pitch prep.
+Climate and impact founders preparing for seed or Series A who want a fast way to turn their story and data into a polished pitch deck without starting from a blank slide deck.
 
 ## How to use it
-Open the GPT or copy the prompts into your preferred AI platform, then share your draft narrative, ICP, and key metrics. The tool guides you through refining your story and stress-testing impact claims.
+Open [Manus AI Pitch Deck Generator](https://manus.im/playbook/pitch-deck-generator), describe your startup and audience, and optionally upload or paste business plans, financials, or market notes. The more context you give, the better the deck. Use the output as a draft to refine with your team and stress-test with advisors before investor meetings.
