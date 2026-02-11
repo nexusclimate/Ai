@@ -14,6 +14,12 @@ export default function SubmitForm() {
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value="gpt-submission" />
+      {/* Reply-to is set from the field with name="email". Subject uses Netlify variables. */}
+      <input
+        type="hidden"
+        name="subject"
+        value="New GPT submission · %{formName} · %{siteName} (#%{submissionId})"
+      />
       <p className="hidden">
         <label>
           Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
@@ -143,15 +149,15 @@ export default function SubmitForm() {
         />
       </div>
 
-      {/* Your Email */}
+      {/* Your Email — name="email" lets Netlify set Reply-to on notification emails */}
       <div>
-        <label htmlFor="submitter-email" className="block text-lightgray font-medium mb-2">
+        <label htmlFor="email" className="block text-lightgray font-medium mb-2">
           Your Email <span className="text-accent">*</span>
         </label>
         <input
           type="email"
-          id="submitter-email"
-          name="submitter-email"
+          id="email"
+          name="email"
           required
           className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition"
           placeholder="your.email@example.com"
