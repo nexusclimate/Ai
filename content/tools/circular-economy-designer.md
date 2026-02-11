@@ -2,7 +2,7 @@
 name: Circular Economy Business Model Designer
 slug: circular-economy-designer
 platform: OpenAI
-url: https://ellenmacarthurfoundation.org/
+url: https://example.com
 collections:
   - circular-economy
   - startup-resources
@@ -14,7 +14,7 @@ tags:
 maturity: beta
 verified: false
 featured: false
-short_summary: "Helps design circular business models including product-as-service, take-back programs, and closed-loop systems."
+short_summary: "A GPT that helps you design circular business models—product-as-service, take-back programs, and closed-loop systems."
 last_verified: "2026-02-08"
 use_cases:
   - "Design product-as-a-service models"
@@ -27,10 +27,10 @@ limitations:
 ---
 
 ## What it does
-Supports businesses in transitioning from linear to circular models, covering product design, reverse logistics, refurbishment, and material recovery strategies.
+This GPT assists with shifting from linear to circular business models. You can use it to explore product design, reverse logistics, refurbishment, and material recovery strategies—as an AI tool, not a consultancy or service.
 
 ## Who it's for
-Product designers, sustainability managers, and entrepreneurs building circular economy businesses.
+Product designers, sustainability managers, and entrepreneurs who want a GPT to brainstorm and structure circular economy ideas.
 
 ## Sources
-Based on Ellen MacArthur Foundation's circular economy frameworks and business model patterns from companies like Patagonia's Worn Wear and Interface's ReEntry program.
+The GPT draws on Ellen MacArthur Foundation frameworks and business model patterns (e.g. Patagonia Worn Wear, Interface ReEntry). For deeper reading, see [Ellen MacArthur Foundation](https://ellenmacarthurfoundation.org/).
