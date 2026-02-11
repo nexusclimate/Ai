@@ -69,25 +69,30 @@ export default function RootLayout({
 
         {/* Footer */}
         <footer className="relative z-10 border-t border-white/10 mt-24 px-6 py-6">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-lightgray/70">
-            {/* Left: Copyright */}
-            <div>
-              © 2026 Climate GPT Hub
+          <div className="max-w-7xl mx-auto space-y-4">
+            {/* Maturity legend */}
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-lightgray/60">
+              <span className="font-medium text-lightgray/70">Maturity:</span>
+              <span><span className="inline-block w-2 h-2 rounded-full bg-accent/80 mr-1.5 align-middle" aria-hidden />stable — production-ready</span>
+              <span><span className="inline-block w-2 h-2 rounded-full bg-yellow-400/80 mr-1.5 align-middle" aria-hidden />beta — in development</span>
+              <span><span className="inline-block w-2 h-2 rounded-full bg-softblue/80 mr-1.5 align-middle" aria-hidden />experimental — early / try at your own risk</span>
             </div>
-            
-            {/* Middle: Initiative */}
-            <div>
-              An initiative by{' '}
-              <a href="https://nexusclimate.vc" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                Nexus Climate
-              </a>
-            </div>
-            
-            {/* Right: Email */}
-            <div>
-              <a href="mailto:contact@nexusclimate.ai" className="text-accent hover:underline">
-                contact@nexusclimate.ai
-              </a>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-lightgray/70">
+              {/* Left: Copyright */}
+              <div>© 2026 Climate GPT Hub</div>
+              {/* Middle: Initiative */}
+              <div>
+                An initiative by{' '}
+                <a href="https://nexusclimate.vc" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                  Nexus Climate
+                </a>
+              </div>
+              {/* Right: Email */}
+              <div>
+                <a href="mailto:contact@nexusclimate.ai" className="text-accent hover:underline">
+                  contact@nexusclimate.ai
+                </a>
+              </div>
             </div>
           </div>
         </footer>
