@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit a GPT - Climate GPT Hub</title>
+</head>
+<body>
+  <!-- This form is for Netlify Forms detection only -->
+  <form name="gpt-submission" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="gpt-name" />
+    <input type="url" name="gpt-url" />
+    <select name="platform">
+      <option value="OpenAI">OpenAI ChatGPT</option>
+      <option value="Anthropic">Anthropic Claude</option>
+      <option value="Google">Google Gemini</option>
+      <option value="Web App">Web Application</option>
+      <option value="Other">Other</option>
+    </select>
+    <select name="category">
+      <option value="climate-analysis">Climate Analysis</option>
+      <option value="energy">Energy & Infrastructure</option>
+      <option value="carbon-markets">Carbon Markets</option>
+      <option value="startup-resources">Startup Resources</option>
+      <option value="sustainable-agriculture">Sustainable Agriculture</option>
+      <option value="climate-finance">Climate Finance</option>
+      <option value="climate-adaptation">Climate Risk & Adaptation</option>
+      <option value="circular-economy">Circular Economy</option>
+      <option value="nature-based-solutions">Nature-based Solutions</option>
+    </select>
+    <textarea name="description"></textarea>
+    <textarea name="use-cases"></textarea>
+    <input type="text" name="submitter-name" />
+    <input type="email" name="submitter-email" />
+    <textarea name="notes"></textarea>
+    <input type="text" name="bot-field" />
+  </form>
+</body>
+</html>

@@ -13,11 +13,10 @@ export default function ToolCard({ tool }: ToolCardProps) {
     experimental: 'info',
   } as const;
 
-  return (
-    <Link
-      href={`/tools/${tool.slug}`}
-      className="block p-6 glass rounded-lg hover:border-accent/30 transition-all duration-200 group"
-    >
+  const isPlaceholder = tool.url.includes('example.com');
+
+  const cardContent = (
+    <>
       <div className="flex items-start justify-between mb-2">
         <h3 className="text-lg font-semibold text-lightgray flex-1 group-hover:text-accent transition">
           {tool.name}
@@ -50,6 +49,29 @@ export default function ToolCard({ tool }: ToolCardProps) {
           ★ Featured
         </span>
       )}
+      
+      {isPlaceholder && (
+        <span className="inline-block text-xs font-medium text-lightgray/50 ml-2">
+          • Coming Soon
+        </span>
+      )}
+    </>
+  );
+
+  if (isPlaceholder) {
+    return (
+      <div className="block p-6 glass rounded-lg border-lightgray/20 opacity-75 cursor-default">
+        {cardContent}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={`/tools/${tool.slug}`}
+      className="block p-6 glass rounded-lg hover:border-accent/30 transition-all duration-200 group"
+    >
+      {cardContent}
     </Link>
   );
 }

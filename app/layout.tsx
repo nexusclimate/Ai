@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Climate GPT Hub | Curated AI Tools for Climate Tech',
+  title: 'Climate GPT Hub 🌍',
   description: 'Discover the best climate-related and climate tech startup GPTs across all major platforms. A curated one-stop-shop for climate AI tools.',
   keywords: 'climate GPT, climate tech AI, climate AI tools, GPT curation, climate technology, sustainability AI, climate startups',
   openGraph: {
@@ -49,7 +49,7 @@ export default function RootLayout({
                   Search
                 </a>
                 <a 
-                  href="mailto:info@nexusclimate.ai?subject=Submit a GPT" 
+                  href="/submit" 
                   className="bg-accent text-darkbg font-semibold py-2 px-4 rounded hover:opacity-90 transition"
                 >
                   Submit a GPT
@@ -76,8 +76,8 @@ export default function RootLayout({
             <div className="flex flex-col items-center md:items-end">
               <p className="text-lightgray/70 text-base">
                 Email:{' '}
-                <a href="mailto:info@nexusclimate.ai" className="text-accent hover:underline">
-                  info@nexusclimate.ai
+                <a href="mailto:contact@nexusclimate.ai" className="text-accent hover:underline">
+                  contact@nexusclimate.ai
                 </a>
               </p>
               <p className="text-lightgray/60 text-base mt-1">© 2026 Climate GPT Hub</p>

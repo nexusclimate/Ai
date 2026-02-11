@@ -9,10 +9,10 @@ export default function HomePage() {
   const featuredTools = getFeaturedTools();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
-      {/* Hero Section */}
-      <div className="text-center mb-16 pt-8">
-        <div className="inline-block mb-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section - Centered Search */}
+      <div className="text-center py-20 min-h-[60vh] flex flex-col justify-center animate-fade-in">
+        <div className="inline-block mb-6 mx-auto">
           <span className="bg-accent/20 text-accent font-semibold px-4 py-2 rounded-full text-sm md:text-base border border-accent/30">
             CURATED CLIMATE AI TOOLS
           </span>
@@ -23,10 +23,12 @@ export default function HomePage() {
         <p className="text-accent font-medium text-xl mb-2">
           The One-Stop Shop for Climate Tech AI Tools
         </p>
-        <p className="text-lightgray/70 text-xl max-w-3xl mx-auto mb-8">
+        <p className="text-lightgray/70 text-lg max-w-2xl mx-auto mb-12">
           Discover and explore specialized AI tools for climate action, sustainability, and environmental impact.
         </p>
-        <SearchBox placeholder="Search climate AI tools..." />
+        <div className="flex justify-center">
+          <SearchBox placeholder="Search climate AI tools..." />
+        </div>
       </div>
 
       {/* Featured Collections */}
@@ -53,7 +55,7 @@ export default function HomePage() {
 
       {/* Featured Tools */}
       {featuredTools.length > 0 && (
-        <section>
+        <section className="mb-16">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-3xl font-semibold text-lightgray">
               Featured Tools
@@ -74,7 +76,7 @@ export default function HomePage() {
       )}
 
       {/* CTA Section */}
-      <section className="mt-16 glass rounded-lg p-8 text-center border-accent/20">
+      <section className="mb-16 glass rounded-lg p-8 text-center border-accent/20">
         <h2 className="text-2xl font-bold text-lightgray mb-4">
           Ready to explore?
         </h2>

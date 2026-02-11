@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
 import SearchClient from './search-client';
 import { getAllTools } from '@/lib/content';
+
+export const metadata: Metadata = {
+  title: 'Search Climate AI Tools | Climate GPT Hub',
+  description: 'Search and discover climate-focused AI tools and GPTs across all categories.',
+};
 
 export default function SearchPage() {
   const tools = getAllTools();

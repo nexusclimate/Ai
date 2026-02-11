@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import ToolCard from '@/components/ToolCard';
 import { getAllCollections, getCollectionBySlug, getToolsByCollection } from '@/lib/content';
 
@@ -8,6 +9,21 @@ export async function generateStaticParams() {
   return collections.map((collection) => ({
     slug: collection.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const collection = getCollectionBySlug(params.slug);
+  
+  if (!collection) {
+    return {
+      title: 'Collection Not Found',
+    };
+  }
+
+  return {
+    title: `${collection.title} | Climate GPT Hub`,
+    description: collection.description,
+  };
 }
 
 export default function CollectionPage({ params }: { params: { slug: string } }) {

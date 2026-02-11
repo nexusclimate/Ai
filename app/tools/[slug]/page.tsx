@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import Badge from '@/components/Badge';
 import { getAllTools, getToolBySlug, getToolContent } from '@/lib/content';
 
@@ -8,6 +9,21 @@ export async function generateStaticParams() {
   return tools.map((tool) => ({
     slug: tool.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const tool = getToolBySlug(params.slug);
+  
+  if (!tool) {
+    return {
+      title: 'Tool Not Found',
+    };
+  }
+
+  return {
+    title: `${tool.name} | Climate GPT Hub`,
+    description: tool.short_summary,
+  };
 }
 
 export default async function ToolPage({ params }: { params: { slug: string } }) {
@@ -24,6 +40,9 @@ export default async function ToolPage({ params }: { params: { slug: string } })
     stable: 'success',
     experimental: 'info',
   } as const;
+
+  // Check if URL is a placeholder
+  const isPlaceholder = tool.url.includes('example.com');
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -69,27 +88,33 @@ export default async function ToolPage({ params }: { params: { slug: string } })
           ))}
         </div>
 
-        <a
-          href={tool.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-6 py-3 bg-accent text-darkbg rounded-lg hover:opacity-90 font-medium transition"
-        >
-          Open Tool
-          <svg
-            className="ml-2 w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        {!isPlaceholder ? (
+          <a
+            href={tool.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-accent text-darkbg rounded-lg hover:opacity-90 font-medium transition"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
-        </a>
+            Open Tool
+            <svg
+              className="ml-2 w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
+        ) : (
+          <div className="inline-flex items-center px-6 py-3 glass border-lightgray/20 text-lightgray/50 rounded-lg cursor-not-allowed">
+            <span>Coming Soon</span>
+          </div>
+        )}
       </div>
 
       {/* Tool Content */}

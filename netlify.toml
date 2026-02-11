@@ -6,3 +6,11 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Form submission notifications
+[build.environment]
+  # Form submissions will be sent to the email configured in Netlify UI
+
+# You can also configure form notifications in the Netlify UI:
+# Site Settings > Forms > Form notifications
+# Add email notification with recipient: contact@nexusclimate.ai
