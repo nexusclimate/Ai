@@ -1,61 +1,22 @@
-'use client';
-
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-
+/**
+ * Plain HTML form with Netlify form detection.
+ * Netlify parses forms at deploy time — no API call or extra JavaScript needed.
+ * Submissions appear in the Netlify dashboard automatically.
+ */
 export default function SubmitForm() {
-  const router = useRouter();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setError(null);
-    setIsSubmitting(true);
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    // Netlify requires form-name for form detection
-    formData.set('form-name', 'gpt-submission');
-
-    try {
-      const params = new URLSearchParams();
-      formData.forEach((value, key) => {
-        params.append(key, value.toString());
-      });
-
-      const response = await fetch('/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString(),
-      });
-
-      if (!response.ok) {
-        throw new Error('Submission failed. Please try again.');
-      }
-
-      // Success: redirect to thank-you page
-      router.push('/thank-you');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
-      setIsSubmitting(false);
-    }
-  }
-
   return (
     <form
       name="gpt-submission"
       method="POST"
+      action="/thank-you"
       data-netlify="true"
-      netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
+      data-netlify-honeypot="bot-field"
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value="gpt-submission" />
       <p className="hidden">
         <label>
-          Don't fill this out if you're human: <input name="bot-field" />
+          Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
         </label>
       </p>
 
@@ -69,8 +30,7 @@ export default function SubmitForm() {
           id="gpt-name"
           name="gpt-name"
           required
-          disabled={isSubmitting}
-          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition disabled:opacity-70"
+          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition"
           placeholder="e.g., Climate Risk Analyzer"
         />
       </div>
@@ -85,8 +45,7 @@ export default function SubmitForm() {
           id="gpt-url"
           name="gpt-url"
           required
-          disabled={isSubmitting}
-          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition disabled:opacity-70"
+          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition"
           placeholder="https://chat.openai.com/g/..."
         />
       </div>
@@ -100,8 +59,7 @@ export default function SubmitForm() {
           id="platform"
           name="platform"
           required
-          disabled={isSubmitting}
-          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition disabled:opacity-70"
+          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition"
         >
           <option value="">Select a platform</option>
           <option value="OpenAI">OpenAI ChatGPT</option>
@@ -121,8 +79,7 @@ export default function SubmitForm() {
           id="category"
           name="category"
           required
-          disabled={isSubmitting}
-          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition disabled:opacity-70"
+          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition"
         >
           <option value="">Select a category</option>
           <option value="climate-analysis">Climate Analysis</option>
@@ -152,8 +109,7 @@ export default function SubmitForm() {
           name="description"
           required
           rows={4}
-          disabled={isSubmitting}
-          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition resize-none disabled:opacity-70"
+          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition resize-none"
           placeholder="Brief description of what this GPT/tool does and who it's for..."
         />
       </div>
@@ -167,8 +123,7 @@ export default function SubmitForm() {
           id="use-cases"
           name="use-cases"
           rows={3}
-          disabled={isSubmitting}
-          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition resize-none disabled:opacity-70"
+          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition resize-none"
           placeholder="What problems does it solve? (Optional)"
         />
       </div>
@@ -183,8 +138,7 @@ export default function SubmitForm() {
           id="submitter-name"
           name="submitter-name"
           required
-          disabled={isSubmitting}
-          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition disabled:opacity-70"
+          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition"
           placeholder="Your name"
         />
       </div>
@@ -199,8 +153,7 @@ export default function SubmitForm() {
           id="submitter-email"
           name="submitter-email"
           required
-          disabled={isSubmitting}
-          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition disabled:opacity-70"
+          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition"
           placeholder="your.email@example.com"
         />
       </div>
@@ -214,31 +167,23 @@ export default function SubmitForm() {
           id="notes"
           name="notes"
           rows={3}
-          disabled={isSubmitting}
-          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition resize-none disabled:opacity-70"
+          className="w-full px-4 py-3 glass rounded-lg text-lightgray focus:border-accent/50 focus:outline-none transition resize-none"
           placeholder="Any additional information or context... (Optional)"
         />
       </div>
-
-      {error && (
-        <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-sm">
-          {error}
-        </div>
-      )}
 
       {/* Submit Button */}
       <div className="pt-4">
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="w-full px-6 py-3 bg-accent text-darkbg rounded-lg hover:opacity-90 font-medium transition text-lg disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full px-6 py-3 bg-accent text-darkbg rounded-lg hover:opacity-90 font-medium transition text-lg"
         >
-          {isSubmitting ? 'Submitting...' : 'Submit GPT'}
+          Submit GPT
         </button>
       </div>
 
       <p className="text-lightgray/60 text-sm text-center">
-        We'll review your submission and add it to the hub if it meets our criteria.
+        We&apos;ll review your submission and add it to the hub if it meets our criteria.
       </p>
     </form>
   );
