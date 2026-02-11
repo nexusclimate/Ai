@@ -63,24 +63,26 @@ export default function RootLayout({
         <main className="relative z-10 min-h-screen">{children}</main>
 
         {/* Footer */}
-        <footer className="relative z-10 border-t border-white/10 mt-24 px-6 py-10">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-y-8 md:gap-y-0">
-            <div className="flex flex-col items-center md:items-start">
-              <p className="text-lightgray/70 text-base mb-2">
-                An initiative by{' '}
-                <a href="https://nexusclimate.vc" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                  Nexus Climate
-                </a>
-              </p>
+        <footer className="relative z-10 border-t border-white/10 mt-24 px-6 py-6">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-lightgray/70">
+            {/* Left: Copyright */}
+            <div>
+              © 2026 Climate GPT Hub
             </div>
-            <div className="flex flex-col items-center md:items-end">
-              <p className="text-lightgray/70 text-base">
-                Email:{' '}
-                <a href="mailto:contact@nexusclimate.ai" className="text-accent hover:underline">
-                  contact@nexusclimate.ai
-                </a>
-              </p>
-              <p className="text-lightgray/60 text-base mt-1">© 2026 Climate GPT Hub</p>
+            
+            {/* Middle: Initiative */}
+            <div>
+              An initiative by{' '}
+              <a href="https://nexusclimate.vc" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                Nexus Climate
+              </a>
+            </div>
+            
+            {/* Right: Email */}
+            <div>
+              <a href="mailto:contact@nexusclimate.ai" className="text-accent hover:underline">
+                contact@nexusclimate.ai
+              </a>
             </div>
           </div>
         </footer>
