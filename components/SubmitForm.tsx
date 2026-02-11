@@ -25,7 +25,7 @@ export default function SubmitForm() {
         params.append(key, value.toString());
       });
 
-      const response = await fetch('/', {
+      const response = await fetch('/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: params.toString(),

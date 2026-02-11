@@ -47,7 +47,7 @@ export default function RootLayout({
                 Climate GPT Hub
               </a>
               <div className="hidden md:flex items-center space-x-6 text-base text-lightgray/80">
-                <a href="/collections/climate-analysis" className="hover:text-white transition">
+                <a href="/collections" className="hover:text-white transition">
                   Collections
                 </a>
                 <a href="/search" className="hover:text-white transition">

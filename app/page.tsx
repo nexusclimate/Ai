@@ -52,7 +52,7 @@ export default function HomePage() {
               Featured Collections
             </h2>
             <Link
-              href="/collections/climate-analysis"
+              href="/collections"
               className="text-accent hover:text-softblue font-medium transition"
             >
               View all →
@@ -98,7 +98,7 @@ export default function HomePage() {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
-            href="/collections/climate-analysis"
+            href="/collections"
             className="inline-block px-6 py-3 bg-accent text-darkbg rounded-lg hover:opacity-90 font-medium transition"
           >
             Browse Collections
