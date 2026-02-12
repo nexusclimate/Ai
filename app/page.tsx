@@ -4,8 +4,7 @@ import SearchBox from '@/components/SearchBox';
 import CollectionCard from '@/components/CollectionCard';
 import ToolCard from '@/components/ToolCard';
 import RecentlyUpdated from '@/components/RecentlyUpdated';
-import LatestUpdates from '@/components/LatestUpdates';
-import { getFeaturedCollections, getFeaturedTools, getRecentlyUpdatedTools, getLatestUpdates } from '@/lib/content';
+import { getFeaturedCollections, getFeaturedTools, getRecentlyUpdatedTools } from '@/lib/content';
 import { SITE_URL, DEFAULT_OG_IMAGE, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -22,8 +21,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const featuredCollections = getFeaturedCollections();
   const featuredTools = getFeaturedTools();
-  const recentlyUpdated = getRecentlyUpdatedTools(6);
-  const latestUpdates = getLatestUpdates(4);
+  const recentlyUpdated = getRecentlyUpdatedTools(4);
   const generatedAt = new Date();
 
   return (
@@ -70,9 +68,6 @@ export default function HomePage() {
 
       {/* Recently updated */}
       <RecentlyUpdated tools={recentlyUpdated} />
-
-      {/* Latest updates (changelog) */}
-      <LatestUpdates updates={latestUpdates} />
 
       {/* Featured Collections */}
       {featuredCollections.length > 0 && (

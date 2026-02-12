@@ -3,6 +3,8 @@ import type { Update } from '@/lib/types';
 
 interface LatestUpdatesProps {
   updates: Update[];
+  /** Set to false when already on the updates page to hide "View all" */
+  showViewAll?: boolean;
 }
 
 function formatDate(iso: string): string {
@@ -14,21 +16,23 @@ function formatDate(iso: string): string {
   }
 }
 
-export default function LatestUpdates({ updates }: LatestUpdatesProps) {
+export default function LatestUpdates({ updates, showViewAll = true }: LatestUpdatesProps) {
   if (updates.length === 0) return null;
 
   return (
     <section className="mb-16">
-      <div className="flex justify-between items-center mb-6">
+      <div className={`flex ${showViewAll ? 'justify-between' : ''} items-center mb-6`}>
         <h2 className="text-3xl font-semibold text-lightgray">
-          Latest updates
+          Latest website updates
         </h2>
-        <Link
-          href="/updates"
-          className="text-accent hover:text-softblue font-medium transition"
-        >
-          View all →
-        </Link>
+        {showViewAll && (
+          <Link
+            href="/updates"
+            className="text-accent hover:text-softblue font-medium transition"
+          >
+            View all →
+          </Link>
+        )}
       </div>
       <ul className="space-y-3 list-none p-0 m-0">
         {updates.map((update) => (

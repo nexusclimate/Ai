@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { getAllUpdates } from '@/lib/content';
+import RecentlyUpdated from '@/components/RecentlyUpdated';
+import LatestUpdates from '@/components/LatestUpdates';
+import { getAllUpdates, getRecentlyUpdatedTools, getLatestUpdates } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Updates',
@@ -20,6 +22,8 @@ function formatDate(iso: string): string {
 
 export default async function UpdatesPage() {
   const updates = getAllUpdates();
+  const recentlyUpdatedTools = getRecentlyUpdatedTools(4);
+  const latestPlatformUpdates = getLatestUpdates(4);
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -31,6 +35,12 @@ export default async function UpdatesPage() {
           What’s new on Climate GPT Hub—new tools, new collections, and improvements. Below is the full list of updates.
         </p>
       </div>
+
+      {/* Recently updated (tools) */}
+      <RecentlyUpdated tools={recentlyUpdatedTools} />
+
+      {/* Latest website updates (changelog preview) */}
+      <LatestUpdates updates={latestPlatformUpdates} showViewAll={false} />
 
       {updates.length === 0 ? (
         <div className="glass rounded-lg p-8 text-center text-lightgray/70">
