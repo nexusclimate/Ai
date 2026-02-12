@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import SubmitForm from '@/components/SubmitForm';
 
 export const metadata: Metadata = {
-  title: 'Submit a GPT',
+  title: 'Submit',
   description: 'Submit your climate-focused GPT or AI tool to Climate AI Tools Hub. We review and add tools that meet our criteria for the curated directory.',
 };
 
@@ -12,7 +12,7 @@ export default function SubmitPage() {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-light text-lightgray mb-4">
-          Submit a Climate GPT
+          Submit
         </h1>
         <p className="text-lightgray/70 text-lg">
           Know of an excellent climate-related GPT or AI tool? Help us build the most comprehensive collection by submitting your recommendations.

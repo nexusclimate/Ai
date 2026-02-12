@@ -103,7 +103,7 @@ export default function RootLayout({
                   href="/submit" 
                   className="bg-accent text-darkbg font-semibold py-2 px-4 rounded hover:opacity-90 transition"
                 >
-                  Submit a GPT
+                  Submit
                 </a>
               </div>
             </div>
