@@ -47,17 +47,11 @@ export default function HomePage() {
         </div>
         <p className="text-lightgray/60 text-sm mt-6 mb-4">or</p>
         <Link
-          href="/tools/climate-gpt-concierge"
-          className="inline-flex items-center gap-2 px-6 py-3 glass border-accent/40 text-accent rounded-lg hover:border-accent hover:bg-accent/10 font-medium transition"
+          href="/submit"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-darkbg font-semibold rounded-lg hover:opacity-90 transition"
         >
-          <span>Try the Climate AI Tools Hub Concierge</span>
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
+          Submit
         </Link>
-        <p className="text-lightgray/50 text-sm mt-3 max-w-md mx-auto">
-          Find the right climate GPTs and tools in minutes — get recommendations, comparisons, and workflows from the hub directory.
-        </p>
         <p className="text-lightgray/40 text-xs mt-4" role="status">
           Last refreshed: {generatedAt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
           {process.env.NEXT_PUBLIC_APP_VERSION && (
