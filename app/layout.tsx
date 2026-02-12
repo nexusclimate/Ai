@@ -78,9 +78,6 @@ export default function RootLayout({
                 <a href="/collections" className="hover:text-white transition">
                   Collections
                 </a>
-                <a href="/search" className="hover:text-white transition">
-                  Search
-                </a>
                 <a 
                   href="/submit" 
                   className="bg-accent text-darkbg font-semibold py-2 px-4 rounded hover:opacity-90 transition"

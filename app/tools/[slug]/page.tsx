@@ -58,7 +58,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
           Home
         </Link>
         <span className="mx-2 text-lightgray/40">/</span>
-        <Link href="/search" className="text-lightgray/70 hover:text-accent transition">
+        <Link href="/explore" className="text-lightgray/70 hover:text-accent transition">
           Tools
         </Link>
         <span className="mx-2 text-lightgray/40">/</span>

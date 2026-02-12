@@ -15,7 +15,7 @@ export default function SearchBox({ placeholder = 'Search tools...', autoFocus =
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+      router.push(`/explore?q=${encodeURIComponent(query.trim())}`);
     }
   };
 

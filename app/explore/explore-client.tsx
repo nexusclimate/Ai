@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Fuse from 'fuse.js';
 import ToolCard from '@/components/ToolCard';
 import type { Tool, Collection } from '@/lib/types';
@@ -20,7 +21,8 @@ export default function ExploreClient({
   topTags,
   platforms,
 }: ExploreClientProps) {
-  const [query, setQuery] = useState('');
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState(() => searchParams.get('q') ?? '');
   const [platformFilter, setPlatformFilter] = useState<string[]>([]);
   const [collectionFilter, setCollectionFilter] = useState<string[]>([]);
   const [maturityFilter, setMaturityFilter] = useState<string[]>([]);
@@ -205,44 +207,55 @@ export default function ExploreClient({
           {/* Collection */}
           <div>
             <h3 className="text-sm font-medium text-lightgray/90 mb-2">Collection</h3>
-            <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto">
+            <ul className="flex flex-wrap gap-1.5 list-none p-0 m-0">
               {collections.map((c) => (
-                <button
-                  key={c.slug}
-                  onClick={() =>
-                    toggleFilter(c.slug, collectionFilter, setCollectionFilter)
-                  }
-                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition whitespace-nowrap ${
-                    collectionFilter.includes(c.slug)
-                      ? 'bg-accent text-darkbg'
-                      : 'glass border border-white/10 text-lightgray/80 hover:border-accent/30'
-                  }`}
-                >
-                  {c.title}
-                </button>
+                <li key={c.slug}>
+                  <button
+                    onClick={() =>
+                      toggleFilter(c.slug, collectionFilter, setCollectionFilter)
+                    }
+                    className={`px-3 py-1.5 rounded-md text-xs font-medium transition whitespace-nowrap ${
+                      collectionFilter.includes(c.slug)
+                        ? 'bg-accent text-darkbg'
+                        : 'glass border border-white/10 text-lightgray/80 hover:border-accent/30'
+                    }`}
+                  >
+                    {c.title}
+                  </button>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Maturity */}
+          {/* Maturity — selected state uses same colours as maturity badges */}
           <div>
             <h3 className="text-sm font-medium text-lightgray/90 mb-2">Maturity</h3>
             <div className="flex flex-wrap gap-1.5">
-              {maturities.map((m) => (
-                <button
-                  key={m.value}
-                  onClick={() =>
-                    toggleFilter(m.value, maturityFilter, setMaturityFilter)
-                  }
-                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition ${
-                    maturityFilter.includes(m.value)
-                      ? 'bg-accent text-darkbg'
-                      : 'glass border border-white/10 text-lightgray/80 hover:border-accent/30'
-                  }`}
-                >
-                  {m.label}
-                </button>
-              ))}
+              {maturities.map((m) => {
+                const isSelected = maturityFilter.includes(m.value);
+                const maturityStyles: Record<string, string> = {
+                  stable: isSelected
+                    ? 'bg-accent/20 text-accent border border-accent/30'
+                    : 'glass border border-white/10 text-lightgray/80 hover:border-accent/30',
+                  beta: isSelected
+                    ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30'
+                    : 'glass border border-white/10 text-lightgray/80 hover:border-accent/30',
+                  experimental: isSelected
+                    ? 'bg-softblue/20 text-softblue border border-softblue/30'
+                    : 'glass border border-white/10 text-lightgray/80 hover:border-accent/30',
+                };
+                return (
+                  <button
+                    key={m.value}
+                    onClick={() =>
+                      toggleFilter(m.value, maturityFilter, setMaturityFilter)
+                    }
+                    className={`px-3 py-1.5 rounded-md text-xs font-medium transition ${maturityStyles[m.value]}`}
+                  >
+                    {m.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 

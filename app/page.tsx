@@ -87,7 +87,7 @@ export default function HomePage() {
               Featured Tools
             </h2>
             <Link
-              href="/search"
+              href="/explore"
               className="text-accent hover:text-softblue font-medium transition"
             >
               View all →
@@ -117,7 +117,7 @@ export default function HomePage() {
             Browse Collections
           </Link>
           <Link
-            href="/search"
+            href="/explore"
             className="inline-block px-6 py-3 glass border-accent/30 text-accent rounded-lg hover:border-accent/50 font-medium transition"
           >
             Search Tools
