@@ -4,7 +4,8 @@ import SearchBox from '@/components/SearchBox';
 import CollectionCard from '@/components/CollectionCard';
 import ToolCard from '@/components/ToolCard';
 import RecentlyUpdated from '@/components/RecentlyUpdated';
-import { getFeaturedCollections, getFeaturedTools, getRecentlyUpdatedTools } from '@/lib/content';
+import LatestUpdates from '@/components/LatestUpdates';
+import { getFeaturedCollections, getFeaturedTools, getRecentlyUpdatedTools, getLatestUpdates } from '@/lib/content';
 import { SITE_URL, DEFAULT_OG_IMAGE, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function HomePage() {
   const featuredCollections = getFeaturedCollections();
   const featuredTools = getFeaturedTools();
   const recentlyUpdated = getRecentlyUpdatedTools(6);
+  const latestUpdates = getLatestUpdates(4);
   const generatedAt = new Date();
 
   return (
@@ -68,6 +70,9 @@ export default function HomePage() {
 
       {/* Recently updated */}
       <RecentlyUpdated tools={recentlyUpdated} />
+
+      {/* Latest updates (changelog) */}
+      <LatestUpdates updates={latestUpdates} />
 
       {/* Featured Collections */}
       {featuredCollections.length > 0 && (
@@ -133,6 +138,12 @@ export default function HomePage() {
             className="inline-block px-6 py-3 glass border-accent/30 text-accent rounded-lg hover:border-accent/50 font-medium transition"
           >
             Search Tools
+          </Link>
+          <Link
+            href="/updates"
+            className="inline-block px-6 py-3 glass border-white/20 text-lightgray/80 rounded-lg hover:border-accent/30 font-medium transition"
+          >
+            What&apos;s new
           </Link>
         </div>
       </section>

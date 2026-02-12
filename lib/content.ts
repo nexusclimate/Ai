@@ -136,3 +136,7 @@ export function getAllUpdates(): Update[] {
     .filter((u) => u.date);
   return updates.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
+
+export function getLatestUpdates(limit = 4): Update[] {
+  return getAllUpdates().slice(0, limit);
+}

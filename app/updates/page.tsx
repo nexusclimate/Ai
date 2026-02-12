@@ -27,8 +27,11 @@ export default async function UpdatesPage() {
         <h1 className="text-4xl md:text-5xl font-light text-lightgray mb-2">
           Updates
         </h1>
-        <p className="text-lightgray/70">
-          Changelog and recent changes to the hub—new tools, collections, and improvements.
+        <p className="text-lightgray/70 mb-1">
+          Full changelog—new tools, collections, and improvements. The landing page shows the latest four; here is the complete list.
+        </p>
+        <p className="text-lightgray/50 text-sm">
+          To add an entry: create a markdown file in <code className="text-accent/80">content/updates/</code> with frontmatter <code className="text-accent/80">date</code>, <code className="text-accent/80">title</code>, and optional <code className="text-accent/80">summary</code>.
         </p>
       </div>
 
@@ -37,7 +40,11 @@ export default async function UpdatesPage() {
           No updates yet. Add markdown files to <code className="text-accent">content/updates/</code> with <code className="text-accent">date</code>, <code className="text-accent">title</code>, and optional <code className="text-accent">summary</code>.
         </div>
       ) : (
-        <ul className="space-y-10 list-none p-0 m-0">
+        <>
+          <h2 className="text-xl font-semibold text-lightgray mb-6">
+            All updates ({updates.length})
+          </h2>
+          <ul className="space-y-10 list-none p-0 m-0">
           {await Promise.all(
             updates.map(async (update) => {
               const processed = await remark().use(html).process(update.content);
@@ -64,7 +71,8 @@ export default async function UpdatesPage() {
               );
             })
           )}
-        </ul>
+          </ul>
+        </>
       )}
 
       <div className="mt-12 text-center">
