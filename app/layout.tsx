@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import Link from 'next/link';
 import './globals.css';
 import { SITE_URL, DEFAULT_OG_IMAGE, SITE_NAME, DEFAULT_DESCRIPTION, DEFAULT_KEYWORDS } from '@/lib/seo';
 import JsonLd from '@/components/JsonLd';
@@ -112,23 +113,36 @@ export default function RootLayout({
         {/* Main content */}
         <main className="relative z-10 min-h-screen">{children}</main>
 
-        {/* Nexus Climate banner - just above footer */}
-        <div className="relative z-10 mt-24">
-          <a
-            href="https://nexusclimate.vc"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-darkbg"
-            aria-label="Nexus Climate - Get in touch for climate tech advice"
-          >
-            <img
-              src="/nexus-climate-banner.png"
-              alt="Climate tech start-up? Need some advice? Growth Strategy & Engagement | Training | Enablement | Communications | Policy — www.nexusclimate.vc — Get in touch"
-              className="w-full h-auto"
-              width={1200}
-              height={280}
-            />
-          </a>
+        {/* Ready to explore? CTA - just above footer */}
+        <div className="relative z-10 mt-24 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto glass rounded-lg p-8 text-center border-accent/20">
+            <h2 className="text-2xl font-bold text-lightgray mb-4">
+              Ready to explore?
+            </h2>
+            <p className="text-lightgray/70 mb-6 max-w-2xl mx-auto">
+              Browse our curated collections or search for specific climate AI tools to accelerate your impact.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                href="/collections"
+                className="inline-block px-6 py-3 bg-accent text-darkbg rounded-lg hover:opacity-90 font-medium transition"
+              >
+                Browse Collections
+              </Link>
+              <Link
+                href="/explore"
+                className="inline-block px-6 py-3 glass border-accent/30 text-accent rounded-lg hover:border-accent/50 font-medium transition"
+              >
+                Search Tools
+              </Link>
+              <Link
+                href="/updates"
+                className="inline-block px-6 py-3 glass border-white/20 text-lightgray/80 rounded-lg hover:border-accent/30 font-medium transition"
+              >
+                What&apos;s new
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Footer */}
