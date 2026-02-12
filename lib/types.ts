@@ -38,3 +38,11 @@ export interface ToolMetadata {
   use_cases: string[];
   limitations: string[];
 }
+
+export interface Update {
+  slug: string;
+  date: string;
+  title: string;
+  summary?: string;
+  content: string;
+}

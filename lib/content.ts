@@ -3,11 +3,12 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import type { Collection, Tool, ToolMetadata } from './types';
+import type { Collection, Tool, ToolMetadata, Update } from './types';
 
 const contentDirectory = path.join(process.cwd(), 'content');
 const collectionsDirectory = path.join(contentDirectory, 'collections');
 const toolsDirectory = path.join(contentDirectory, 'tools');
+const updatesDirectory = path.join(contentDirectory, 'updates');
 
 export function getAllCollections(): Collection[] {
   const fileNames = fs.readdirSync(collectionsDirectory);
@@ -99,4 +100,39 @@ export function getFeaturedTools(): Tool[] {
 export function getFeaturedCollections(): Collection[] {
   const allCollections = getAllCollections();
   return allCollections.filter((collection) => collection.featured);
+}
+
+export function getRecentlyUpdatedTools(limit = 6): Tool[] {
+  const all = getAllTools();
+  return [...all]
+    .filter((t) => t.last_verified)
+    .sort((a, b) => {
+      const da = new Date(a.last_verified).getTime();
+      const db = new Date(b.last_verified).getTime();
+      return db - da;
+    })
+    .slice(0, limit);
+}
+
+export function getAllUpdates(): Update[] {
+  if (!fs.existsSync(updatesDirectory)) return [];
+  const fileNames = fs.readdirSync(updatesDirectory);
+  const updates = fileNames
+    .filter((f) => f.endsWith('.md'))
+    .map((fileName) => {
+      const slug = fileName.replace(/\.md$/, '');
+      const filePath = path.join(updatesDirectory, fileName);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const { data, content } = matter(fileContents);
+      const date = data.date || '';
+      return {
+        slug,
+        date,
+        title: data.title || slug,
+        summary: data.summary,
+        content,
+      };
+    })
+    .filter((u) => u.date);
+  return updates.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }

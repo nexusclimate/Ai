@@ -60,9 +60,6 @@ export default function HomePage() {
         </p>
         <p className="text-lightgray/40 text-xs mt-4" role="status">
           Last refreshed: {generatedAt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
-          {process.env.NEXT_PUBLIC_APP_VERSION && (
-            <> · v{process.env.NEXT_PUBLIC_APP_VERSION}</>
-          )}
         </p>
       </div>
 
@@ -133,6 +130,12 @@ export default function HomePage() {
             className="inline-block px-6 py-3 glass border-accent/30 text-accent rounded-lg hover:border-accent/50 font-medium transition"
           >
             Search Tools
+          </Link>
+          <Link
+            href="/updates"
+            className="inline-block px-6 py-3 glass border-white/20 text-lightgray/80 rounded-lg hover:border-accent/30 font-medium transition"
+          >
+            What&apos;s new
           </Link>
         </div>
       </section>
