@@ -86,7 +86,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16 items-center">
               <a href="/" className="text-2xl font-bold text-accent tracking-tight">
-                Climate GPT Hub
+                Climate AI Tools Hub
               </a>
               <div className="hidden md:flex items-center space-x-6 text-base text-lightgray/80">
                 <a href="/collections" className="hover:text-white transition">
@@ -112,6 +112,25 @@ export default function RootLayout({
         {/* Main content */}
         <main className="relative z-10 min-h-screen">{children}</main>
 
+        {/* Nexus Climate banner - just above footer */}
+        <div className="relative z-10 mt-24">
+          <a
+            href="https://nexusclimate.vc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-darkbg"
+            aria-label="Nexus Climate - Get in touch for climate tech advice"
+          >
+            <img
+              src="/nexus-climate-banner.png"
+              alt="Climate tech start-up? Need some advice? Growth Strategy & Engagement | Training | Enablement | Communications | Policy — www.nexusclimate.vc — Get in touch"
+              className="w-full h-auto"
+              width={1200}
+              height={280}
+            />
+          </a>
+        </div>
+
         {/* Footer */}
         <footer className="relative z-10 border-t border-white/10 mt-24 px-6 py-6">
           <div className="max-w-7xl mx-auto space-y-4">
@@ -124,7 +143,7 @@ export default function RootLayout({
             </div>
             <div className="border-t border-white/20 pt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-lightgray/70">
               {/* Left: Copyright */}
-              <div>© 2026 Climate GPT Hub</div>
+              <div>© 2026 Climate AI Tools Hub</div>
               {/* Middle: Initiative */}
               <div>
                 An initiative by{' '}

@@ -31,7 +31,7 @@ export default function JsonLd() {
     '@type': 'Organization',
     name: 'Nexus Climate',
     url: 'https://nexusclimate.vc',
-    description: 'An initiative by Nexus Climate. Climate GPT Hub curates climate AI tools and GPTs for climate tech and sustainability.',
+    description: 'An initiative by Nexus Climate. Climate AI Tools Hub curates climate AI tools and GPTs for climate tech and sustainability.',
   };
 
   return (

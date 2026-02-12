@@ -8,7 +8,7 @@ import { getAllUpdates, getRecentlyUpdatedTools, getLatestUpdates } from '@/lib/
 
 export const metadata: Metadata = {
   title: 'Updates',
-  description: 'Changelog and recent updates to Climate GPT Hub—new tools, collections, and improvements.',
+  description: 'Changelog and recent updates to Climate AI Tools Hub—new tools, collections, and improvements.',
 };
 
 function formatDate(iso: string): string {
@@ -32,7 +32,7 @@ export default async function UpdatesPage() {
           Updates
         </h1>
         <p className="text-lightgray/70">
-          What’s new on Climate GPT Hub—new tools, new collections, and improvements. Below is the full list of updates.
+          What’s new on Climate AI Tools Hub—new tools, new collections, and improvements. Below is the full list of updates.
         </p>
       </div>
 

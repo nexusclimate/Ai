@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ThankYouRedirect from '@/components/ThankYouRedirect';
 
 export const metadata: Metadata = {
-  title: 'Thank You | Climate GPT Hub',
+  title: 'Thank You | Climate AI Tools Hub',
   description: 'Thank you for your GPT submission',
 };
 

@@ -34,7 +34,7 @@ export default function HomePage() {
           </span>
         </div>
         <h1 className="text-5xl md:text-7xl font-light text-lightgray leading-tight mb-6">
-          Climate GPT Hub
+          Climate AI Tools Hub
         </h1>
         <p className="text-accent font-medium text-xl mb-2">
           The One-Stop Shop for Climate Tech AI Tools
@@ -50,7 +50,7 @@ export default function HomePage() {
           href="/tools/climate-gpt-concierge"
           className="inline-flex items-center gap-2 px-6 py-3 glass border-accent/40 text-accent rounded-lg hover:border-accent hover:bg-accent/10 font-medium transition"
         >
-          <span>Try the Climate GPT Hub Concierge</span>
+          <span>Try the Climate AI Tools Hub Concierge</span>
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>

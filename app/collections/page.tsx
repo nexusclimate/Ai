@@ -3,7 +3,7 @@ import CollectionCard from '@/components/CollectionCard';
 import { getAllCollections } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Collections | Climate GPT Hub',
+  title: 'Collections | Climate AI Tools Hub',
   description: 'Browse curated collections of climate-focused AI tools and GPTs by category.',
 };
 
