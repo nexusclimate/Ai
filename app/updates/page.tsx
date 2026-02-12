@@ -27,17 +27,14 @@ export default async function UpdatesPage() {
         <h1 className="text-4xl md:text-5xl font-light text-lightgray mb-2">
           Updates
         </h1>
-        <p className="text-lightgray/70 mb-1">
-          Full changelog—new tools, collections, and improvements. The landing page shows the latest four; here is the complete list.
-        </p>
-        <p className="text-lightgray/50 text-sm">
-          To add an entry: create a markdown file in <code className="text-accent/80">content/updates/</code> with frontmatter <code className="text-accent/80">date</code>, <code className="text-accent/80">title</code>, and optional <code className="text-accent/80">summary</code>.
+        <p className="text-lightgray/70">
+          What’s new on Climate GPT Hub—new tools, new collections, and improvements. Below is the full list of updates.
         </p>
       </div>
 
       {updates.length === 0 ? (
         <div className="glass rounded-lg p-8 text-center text-lightgray/70">
-          No updates yet. Add markdown files to <code className="text-accent">content/updates/</code> with <code className="text-accent">date</code>, <code className="text-accent">title</code>, and optional <code className="text-accent">summary</code>.
+          No updates yet. Check back soon for new tools and improvements.
         </div>
       ) : (
         <>
