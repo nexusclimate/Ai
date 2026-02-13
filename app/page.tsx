@@ -5,14 +5,14 @@ import CollectionCard from '@/components/CollectionCard';
 import ToolCard from '@/components/ToolCard';
 import RecentlyUpdated from '@/components/RecentlyUpdated';
 import { getFeaturedCollections, getFeaturedTools, getRecentlyUpdatedTools } from '@/lib/content';
-import { SITE_URL, DEFAULT_OG_IMAGE, SITE_NAME } from '@/lib/seo';
+import { SITE_URL, DEFAULT_OG_IMAGE, SITE_NAME, DEFAULT_DESCRIPTION } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Curated Climate AI Tools & GPTs',
-  description: 'Discover and explore the best climate AI tools and GPTs—curated for climate tech, sustainability, emissions, and impact. Find the right tool in minutes.',
+  description: DEFAULT_DESCRIPTION,
   openGraph: {
     title: `${SITE_NAME} | Curated Climate AI Tools & GPTs`,
-    description: 'Discover and explore the best climate AI tools and GPTs—curated for climate tech, sustainability, emissions, and impact.',
+    description: DEFAULT_DESCRIPTION,
     url: SITE_URL,
     images: [DEFAULT_OG_IMAGE],
   },
