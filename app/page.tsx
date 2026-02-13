@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const featuredCollections = getFeaturedCollections();
   const featuredTools = getFeaturedTools();
-  const recentlyUpdated = getRecentlyUpdatedTools(4);
+  const recentlyUpdated = getRecentlyUpdatedTools(8);
   const generatedAt = new Date();
 
   return (

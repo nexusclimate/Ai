@@ -17,7 +17,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "Open data utility with emissions data, targets, climate plans, and actions; API support. Apache-2.0 licensed — reusable and integrable for policy and emissions context."
-last_verified: "2026-02-11"
+last_verified: "2026-02-12"
 use_cases:
   - "Emissions and targets data to give climate context around policies"
   - "Compare emissions vs targets and track climate action at multiple scales"

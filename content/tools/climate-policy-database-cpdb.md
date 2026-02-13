@@ -16,7 +16,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "Collaborative policy implementation dataset tracking climate mitigation policies globally. Structured database of policy instruments and status; useful for comparative policy analysis."
-last_verified: "2026-02-11"
+last_verified: "2026-02-12"
 use_cases:
   - "Comparative policy analysis across countries"
   - "Structured policy metadata to feed into summaries and analysis modules"

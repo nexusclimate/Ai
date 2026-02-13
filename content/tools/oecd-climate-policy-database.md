@@ -17,7 +17,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "OECD taxonomy of mitigation policy instruments; structured data in CSV/XLS and related formats. Useful for integrating policy instrument classification into analysis and tools."
-last_verified: "2026-02-11"
+last_verified: "2026-02-12"
 use_cases:
   - "Structured taxonomy of climate mitigation policy instruments"
   - "Download CSV/XLS data for integration into analysis or briefing tools"

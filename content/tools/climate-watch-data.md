@@ -17,7 +17,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "Open emissions and policy datasets for action metrics: historical emissions, NDCs, net-zero targets, long-term strategies. Data Explorer for filtering and download."
-last_verified: "2026-02-11"
+last_verified: "2026-02-12"
 use_cases:
   - "Emissions and policy datasets for action metrics and briefings"
   - "Historical emissions, NDCs, net-zero targets, long-term strategies"

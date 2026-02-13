@@ -17,7 +17,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "Open government-backed semantic wiki for energy and policy data: regulatory and incentive information, searchable and available via APIs. Public domain content."
-last_verified: "2026-02-11"
+last_verified: "2026-02-12"
 use_cases:
   - "Link energy policy with climate targets for integrated briefings"
   - "Open energy policy data and related resources"

@@ -17,7 +17,7 @@ maturity: stable
 verified: true
 featured: true
 short_summary: "Live, global, searchable database of 30,000+ climate laws, policies, and official submissions. Open code and open data; AI & ML in the open to organise and access policy texts."
-last_verified: "2026-02-11"
+last_verified: "2026-02-12"
 use_cases:
   - "Search national laws, strategies, targets, and policy documents across 30,000+ sources"
   - "Basis for an AI briefing system that can fetch, summarise and compare policy documents"

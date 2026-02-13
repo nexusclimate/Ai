@@ -16,7 +16,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "Searchable database of climate laws and policy texts from 196+ countries. Legal frameworks, measures, and climate legislation for regulatory and compliance context."
-last_verified: "2026-02-11"
+last_verified: "2026-02-12"
 use_cases:
   - "Legal context for policy briefings and regulatory summaries"
   - "Compliance and regulatory research across jurisdictions"
