@@ -1,7 +1,7 @@
 ---
 name: Regenerative Agriculture Advisor
 slug: regenerative-agriculture-advisor
-platform: OpenAI
+platform: Web App
 url: https://rodaleinstitute.org/
 collections:
   - sustainable-agriculture

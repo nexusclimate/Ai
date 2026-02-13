@@ -1,7 +1,7 @@
 ---
 name: Energy Optimisation Coach
 slug: energy-optimisation-coach
-platform: OpenAI
+platform: Web App
 url: https://www.iea.org/topics/energy-efficiency
 collections:
   - energy

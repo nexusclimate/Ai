@@ -1,7 +1,7 @@
 ---
 name: Climate Risk Scenario Modeler
 slug: climate-risk-scenario-modeler
-platform: OpenAI
+platform: Web App
 url: https://www.fsb-tcfd.org/
 collections:
   - climate-adaptation
