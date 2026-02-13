@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     shortcut: '/icon.svg',
     apple: '/icon.svg',
   },
+  // Open Graph – used by Slack, Discord, LinkedIn, iMessage, etc. for link previews
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -36,8 +37,16 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Curated Climate AI Tools & GPTs`,
     description: DEFAULT_DESCRIPTION,
-    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: SITE_NAME,
+      },
+    ],
   },
+  // Twitter Card – used when sharing on Twitter/X
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_NAME} | Curated Climate AI Tools & GPTs`,
