@@ -119,6 +119,31 @@ Target audience description.
 
 **Important:** Always quote the `last_verified` date to prevent YAML from parsing it as a Date object.
 
+### Add a tool and sync to Updates (don’t forget)
+
+When you add or update tools, the **Updates** page and **Recently updated** list should stay in sync.
+
+**Recommended: one command after adding cards**
+
+1. **Add your tool cards** — Create (or edit) Markdown file(s) in `content/tools/` and set `last_verified: "YYYY-MM-DD"` (e.g. today’s date).
+2. **Run the release command** — This syncs tools to Updates and bumps the patch version by +0.0.1:
+   ```bash
+   npm run release:additions
+   ```
+   This will:
+   - Sync new tools into `content/updates/YYYY-MM-DD-additions.md` (so they appear on the [Updates](/updates) page)
+   - Bump the version in `package.json` (e.g. 1.1.12 → 1.1.13)
+
+Then run `npm run build` when you’re ready to build with the new version.
+
+**Optional:** Sync only (no version bump):
+```bash
+npm run update:sync
+```
+To sync only a specific date: `node scripts/sync-updates-from-tools.js 2026-02-13`
+
+If you forget to run `release:additions` (or `update:sync`), new tools will still show in Explore and Collections, but they won’t appear in the Updates changelog until you run it.
+
 ## Deployment
 
 ### Netlify

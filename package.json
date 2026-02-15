@@ -1,12 +1,14 @@
 {
   "name": "climate-gpt-hub",
   "private": true,
-  "version": "1.1.12",
+  "version": "1.1.14",
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/bump-version.js && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update:sync": "node scripts/sync-updates-from-tools.js",
+    "release:additions": "node scripts/release-additions.js"
   },
   "dependencies": {
     "clsx": "^2.1.1",
