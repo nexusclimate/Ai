@@ -16,7 +16,7 @@ maturity: stable
 verified: true
 featured: true
 short_summary: "Extensive catalog of satellite imagery combined with cloud computing. Free for research and non-commercial use — run analysis at scale without moving data."
-last_verified: "2026-02-12"
+last_verified: "2026-02-15"
 use_cases:
   - "Large-scale land cover, vegetation, and change analysis"
   - "Time-series and global environmental monitoring"

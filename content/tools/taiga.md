@@ -16,7 +16,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "Open-source project management platform focused on Agile workflows. Scrum and Kanban, plan and track features, free self-hostable option. Good for product and software teams."
-last_verified: "2026-02-12"
+last_verified: "2026-02-15"
 use_cases:
   - "Product development and software startups: plan, track, and deliver features"
   - "Scrum and Kanban workflows for small teams"

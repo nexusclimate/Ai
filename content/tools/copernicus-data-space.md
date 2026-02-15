@@ -18,7 +18,7 @@ maturity: stable
 verified: true
 featured: true
 short_summary: "ESA's Copernicus open satellite data ecosystem: free access to high-resolution imagery from Sentinel-1 (radar) and Sentinel-2 (optical). Frequent global revisit, analysis-ready data."
-last_verified: "2026-02-12"
+last_verified: "2026-02-15"
 use_cases:
   - "Vegetation monitoring and land use change"
   - "Urban growth and water mapping"

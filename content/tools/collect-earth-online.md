@@ -16,7 +16,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "Free, open-source system for interpreting and visualizing satellite imagery over time. Web-based change detection and environmental monitoring for land cover and habitat analysis."
-last_verified: "2026-02-12"
+last_verified: "2026-02-15"
 use_cases:
   - "Agriculture monitoring and deforestation tracking"
   - "Habitat change and land cover analysis"

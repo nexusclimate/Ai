@@ -16,7 +16,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "Interactive browser for Sentinel and Landsat imagery with visualization and download options. Easy exploration of raw satellite data without coding."
-last_verified: "2026-02-12"
+last_verified: "2026-02-15"
 use_cases:
   - "Explore Sentinel and Landsat imagery in the browser"
   - "Visualize and download scenes for specific areas and dates"

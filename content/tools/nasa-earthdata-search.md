@@ -17,7 +17,7 @@ maturity: stable
 verified: true
 featured: true
 short_summary: "NASA's primary open-data portal for global Earth observation satellite imagery and derived science products — MODIS, Landsat, and many other missions. Full open access, API and search tools."
-last_verified: "2026-02-12"
+last_verified: "2026-02-15"
 use_cases:
   - "Climate analysis and environmental modeling"
   - "Land cover change detection and time-series studies"

@@ -16,7 +16,7 @@ maturity: stable
 verified: true
 featured: false
 short_summary: "Self-hostable, open-source no-code database and app builder — an alternative to Airtable. Structure data, build lightweight internal apps (CRM, project tracking) without code."
-last_verified: "2026-02-12"
+last_verified: "2026-02-15"
 use_cases:
   - "Organize structured data without developer overhead"
   - "Build lightweight internal apps: CRM, customer lists, project tracking"
