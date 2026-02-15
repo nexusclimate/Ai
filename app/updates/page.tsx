@@ -22,7 +22,7 @@ function formatDate(iso: string): string {
 
 export default async function UpdatesPage() {
   const updates = getAllUpdates();
-  const recentlyUpdatedTools = getRecentlyUpdatedTools(8);
+  const recentlyUpdatedTools = getRecentlyUpdatedTools(16);
   const latestPlatformUpdates = getLatestUpdates(4);
 
   return (
