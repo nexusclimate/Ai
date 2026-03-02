@@ -146,6 +146,10 @@ If you forget to run `release:additions` (or `update:sync`), new tools will stil
 
 ## Deployment
 
+### Submit form (free, no backend)
+
+The Submit page uses a **mailto:** flow: when the user submits, their email client opens with the submission pre-filled and sent to your inbox. No third-party service, no API keys, no backend. It works on any static host (Dokploy, Vercel, etc.). If the email client doesn’t open, the page shows a **Copy to clipboard** option so they can paste the submission into an email manually. The recipient address is set in the component (`contact@nexusclimate.ai`); change it in `components/SubmitForm.tsx` if needed.
+
 ### Netlify
 
 This project is configured for Netlify deployment:

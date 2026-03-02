@@ -1,33 +1,80 @@
-/**
- * Plain HTML form with Netlify form detection.
- * Netlify parses forms at deploy time — no API call or extra JavaScript needed.
- * Submissions appear in the Netlify dashboard automatically.
- */
-export default function SubmitForm() {
-  return (
-    <form
-      name="gpt-submission"
-      method="POST"
-      action="/thank-you"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      className="space-y-6"
-    >
-      <input type="hidden" name="form-name" value="gpt-submission" />
-      {/* Reply-to is set from the field with name="email" so you can reply directly to the submitter. */}
-      {/* Subject: Netlify replaces %{gpt-name} and %{submitter-name} when supported; otherwise use UI. */}
-      <input
-        type="hidden"
-        name="subject"
-        data-remove-prefix
-        value="GPT submission: %{gpt-name} — from %{submitter-name} (#%{submissionId})"
-      />
-      <p className="hidden">
-        <label>
-          Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
-        </label>
-      </p>
+'use client';
 
+/**
+ * Submit form: 100% free, no backend, no third-party service.
+ * Opens the user's email client with a pre-filled message to your inbox.
+ * Works on any static host (Dokploy, Vercel, etc.). No API keys required.
+ */
+import { useState } from 'react';
+
+const SUBMISSION_EMAIL = 'contact@nexusclimate.ai';
+
+function buildSubmissionBody(form: HTMLFormElement): string {
+  const get = (name: string) => (form.querySelector(`[name="${name}"]`) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement)?.value?.trim() ?? '';
+  const lines: string[] = [
+    '--- GPT/Tool submission for Climate AI Tools Hub ---',
+    '',
+    'GPT/Tool Name: ' + get('gpt-name'),
+    'URL: ' + get('gpt-url'),
+    'Platform: ' + get('platform'),
+    'Category: ' + get('category'),
+    '',
+    'Description:',
+    get('description'),
+    '',
+    'Key Use Cases:',
+    get('use-cases') || '(none)',
+    '',
+    'Submitted by: ' + get('submitter-name'),
+    'Email: ' + get('email'),
+    '',
+    'Additional Notes:',
+    get('notes') || '(none)',
+    '',
+    '---',
+  ];
+  return lines.join('\n');
+}
+
+function buildSubject(form: HTMLFormElement): string {
+  const name = (form.querySelector('[name="gpt-name"]') as HTMLInputElement)?.value?.trim() ?? 'Submission';
+  const submitter = (form.querySelector('[name="submitter-name"]') as HTMLInputElement)?.value?.trim() ?? '';
+  return `GPT submission: ${name}${submitter ? ` — from ${submitter}` : ''}`;
+}
+
+export default function SubmitForm() {
+  const [status, setStatus] = useState<'idle' | 'opened' | 'copied'>('idle');
+  const [submissionText, setSubmissionText] = useState<string>('');
+  const [copyLabel, setCopyLabel] = useState<string>('Copy submission to clipboard');
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    if (!form.checkValidity()) return;
+
+    const subject = buildSubject(form);
+    const body = buildSubmissionBody(form);
+    setSubmissionText(body);
+
+    const mailto = `mailto:${SUBMISSION_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    setStatus('opened');
+  }
+
+  async function handleCopy() {
+    if (!submissionText) return;
+    try {
+      await navigator.clipboard.writeText(submissionText);
+      setCopyLabel('Copied!');
+      setTimeout(() => setCopyLabel('Copy submission to clipboard'), 2000);
+      setStatus('copied');
+    } catch {
+      setCopyLabel('Copy failed');
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
       {/* GPT Name */}
       <div>
         <label htmlFor="gpt-name" className="block text-lightgray font-medium mb-2">
@@ -151,7 +198,7 @@ export default function SubmitForm() {
         />
       </div>
 
-      {/* Your Email — name="email" lets Netlify set Reply-to on notification emails */}
+      {/* Your Email */}
       <div>
         <label htmlFor="email" className="block text-lightgray font-medium mb-2">
           Your Email <span className="text-accent">*</span>
@@ -180,18 +227,40 @@ export default function SubmitForm() {
         />
       </div>
 
+      {(status === 'opened' || status === 'copied') && submissionText && (
+        <div className="rounded-lg border border-accent/20 bg-accent/5 p-4 space-y-3">
+          <p className="text-lightgray text-sm">
+            Your email client should open with the submission pre-filled. If it didn’t, copy the text below and send it to{' '}
+            <a href={`mailto:${SUBMISSION_EMAIL}`} className="text-accent hover:underline">
+              {SUBMISSION_EMAIL}
+            </a>
+            .
+          </p>
+          <button
+            type="button"
+            onClick={handleCopy}
+            className="text-sm px-3 py-1.5 rounded bg-accent/20 text-accent hover:bg-accent/30 transition"
+          >
+            {copyLabel}
+          </button>
+          <pre className="text-lightgray/80 text-xs whitespace-pre-wrap break-words max-h-48 overflow-y-auto">
+            {submissionText}
+          </pre>
+        </div>
+      )}
+
       {/* Submit Button */}
       <div className="pt-4">
         <button
           type="submit"
           className="w-full px-6 py-3 bg-accent text-darkbg rounded-lg hover:opacity-90 font-medium transition text-lg"
         >
-          Submit GPT
+          Open email and send submission
         </button>
       </div>
 
       <p className="text-lightgray/60 text-sm text-center">
-        We&apos;ll review your submission and add it to the hub if it meets our criteria.
+        Submissions go to {SUBMISSION_EMAIL}. We&apos;ll review and add tools that meet our criteria. No third-party form service — your data goes straight to our inbox.
       </p>
     </form>
   );
