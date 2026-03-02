@@ -108,12 +108,12 @@ export default function RootLayout({
                 <a href="/updates" className="hover:text-white transition">
                   Updates
                 </a>
-                <a 
+                <Link 
                   href="/submit" 
                   className="bg-accent text-darkbg font-semibold py-2 px-4 rounded hover:opacity-90 transition"
                 >
                   Submit
-                </a>
+                </Link>
               </div>
             </div>
           </div>

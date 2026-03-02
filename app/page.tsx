@@ -46,15 +46,26 @@ export default function HomePage() {
           <SearchBox placeholder="Search climate AI tools..." />
         </div>
         <p className="text-lightgray/60 text-sm mt-6 mb-4">or</p>
-        <Link
-          href="/tools/climate-gpt-concierge"
-          className="inline-flex items-center gap-2 px-6 py-3 glass border-accent/40 text-accent rounded-lg hover:border-accent hover:bg-accent/10 font-medium transition"
-        >
-          <span>Try the Climate AI Tools Hub Concierge</span>
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </Link>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link
+            href="/submit"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-darkbg font-semibold rounded-lg hover:opacity-90 transition"
+          >
+            Submit a tool
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
+          <Link
+            href="/tools/climate-gpt-concierge"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 glass border-accent/40 text-accent rounded-lg hover:border-accent hover:bg-accent/10 font-medium transition"
+          >
+            <span>Try the Concierge</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
+        </div>
         <p className="text-lightgray/50 text-sm mt-3 max-w-md mx-auto">
           Find the right climate GPTs and tools in minutes — get recommendations, comparisons, and workflows from the hub directory.
         </p>
