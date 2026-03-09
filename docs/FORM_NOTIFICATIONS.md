@@ -32,7 +32,7 @@ Some Netlify setups also support **form field values** in the subject (e.g. `%{g
 
 1. In **Netlify Dashboard:** Site → **Forms** → select form **gpt-submission** → **Form notifications** (or **Site configuration** → **Forms** → **Form notifications**).
 2. Add an **Email notification**.
-3. Set **Recipient** (e.g. `contact@nexusclimate.ai`).
+3. Set **Recipient** (e.g. `hello@nexusclimate.ai`).
 4. The **Subject** is already set by the form’s hidden `subject` input. To override or edit it in the UI, use the variables above (e.g. `New GPT submission · %{formName} (#%{submissionId})`).
 
 ## Security

@@ -12,4 +12,4 @@
 # and Reply-to (uses form field name="email").
 [build.environment]
   # Optional: set if you use env in notifications
-  # NOTIFY_EMAIL = "contact@nexusclimate.ai"
+  # NOTIFY_EMAIL = "hello@nexusclimate.ai"

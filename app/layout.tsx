@@ -176,8 +176,8 @@ export default function RootLayout({
               </div>
               {/* Right: Email */}
               <div>
-                <a href="mailto:contact@nexusclimate.ai" className="text-accent hover:underline">
-                  contact@nexusclimate.ai
+                <a href="mailto:hello@nexusclimate.ai" className="text-accent hover:underline">
+                  hello@nexusclimate.ai
                 </a>
               </div>
             </div>
